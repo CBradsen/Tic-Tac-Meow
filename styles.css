@@ -2,3 +2,30 @@
 font-family: 'Pangolin', cursive;
 font-family: 'Roboto', sans-serif; 
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: dense;
+  }
+
+  .left-side {
+
+  }
+
+  .main {
+
+  }
+
+  .right-side {
+
+  }
+
+  .game-headline {
+
+  }
+
+  .game-container {
+    
+  }

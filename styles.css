@@ -27,10 +27,9 @@ html, body {
 .left-side {
   display: grid;
   grid-area: leftside;
-  grid-template-rows: .5fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: .5fr 1.2fr .1fr .1fr 2.5fr; 
   background-color: #E06D06;
   color: #F1F1F1;
-  align-items: center;
   justify-items: center;
   padding: 1.25rem;
 }
@@ -100,8 +99,8 @@ h1 {
   row-gap: 10px;
 
 }
-
-/* #box1 {
+/*
+#box1, #box4, #box {
   grid-area: box1;
   background-color: magenta;
 } */
@@ -110,6 +109,14 @@ h1 {
  background-color: #276864;
  background: #276864;
  /* border: solid 2px #276864;
- border-radius: 1px;
- padding: 1em; */
-} 
+ border-radius: 1px; */
+}
+
+.iggy-wins::after {
+  content: attr(data-iggy-wins);
+  grid-area: 2;
+}
+
+.ziggy-wins::after {
+  content: attr(data-ziggy-wins);
+}

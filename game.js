@@ -1,58 +1,59 @@
 class Game {
   constructor(iggy, ziggy) {
-  player1 = iggy;
-  player2 = ziggy;
-  gameBoard = {
-    row1: ["", "-", "-"],
-    row2: ["-", "-", "-"],
-    row3: ["-", "-", "-"]
-  };
-  currentPlayer = player1;
+  this.player1 = iggy;
+  this.player2 = ziggy;
+  this.gameBoard = ["", "", "", "", "", "", "", "", ""];
+  this.currentPlayer = this.player1;
+}
+
+trackGameData(i) {
+  console.log(i)
+  if (!this.gameBoard[i]) {
+    this.gameBoard[i] = this.currentPlayer.id  
   }
-
-  // winningCombos: 
-  var one = gameBoard.row1[0];
-  var two = gameBoard.row1[1];
-  var three = gameBoard.row1[2];
-  var four = gameBaord.row2[0];
-  var five = gameBoard.row2[1];
-  var six = gameBoard.row2[2];
-  var seven = gameBoard.row3[0];
-  var eight = gameBaord.row3[1];
-  var nine = gameBoard.row4[2];
-
-trackGameData() {
-  one.push(box1.dataset.player);
-  two.push(box2.dataset.player);
-  three.push(box3.dataset.player);
-  four.push(box4.dataset.player);
-  five.push(box5.dataset.player);
-  six.push(box6.dataset.player);
-  seven.push(box7.dataset.player);
-  eight.push(box8.dataset.player);
-  nine.push(box9.dataset.player);
-
-//   /will update gameboardTracker to "i" or "z"
-// }
+} 
 
 goNext() {
-  if (currentPlayer === player1) {
-    currentPlayer = player2;
+  if (this.currentPlayer === this.player1) {
+    this.currentPlayer = this.player2;
   } else {
-    currentPlayer = player1;
+    this.currentPlayer = this.player1;
   }
-  return currentPlayer
+  return this.currentPlayer
 }
 
-determineWinner() {
+determineOutcome() {
+  var g = this.gameBoard;
+  var win1 = parseInt(g[0]) + parseInt(g[1]) + parseInt(g[2]);
+  var win2 = parseInt(g[3]) + parseInt(g[4]) + parseInt(g[5]);
+  var win3 = parseInt(g[6]) + parseInt(g[7]) + parseInt(g[8]);
+  var win4 = parseInt(g[0]) + parseInt(g[3]) + parseInt(g[6]);
+  var win5 = parseInt(g[1]) + parseInt(g[4]) + parseInt(g[7]);
+  var win6 = parseInt(g[2]) + parseInt(g[5]) + parseInt(g[8]);
+  var win7 = parseInt(g[0]) + parseInt(g[4]) + parseInt(g[8]);
+  var win8 = parseInt(g[2]) + parseInt(g[4]) + parseInt(g[6]);
+  var wins = [win1, win2, win3, win4, win5, win6, win7, win8]
+  
+    for (var i = 0; i < wins.length; ++i) {
+      if ([i] === 0) {
+        console.log("iggy wins");
+      } else if ([i] === 3) {
+        console.log("ziggy wins");
+      } else {
+        console.log("its a draw")
+      }
+    }
 
-[box1, box2, box3], [box1, box4, box7], [box]
+// and update wins in player class
+}
 
 }
 
-resetGameBoard() {
+  // winningCombos: 
 
-}
 
-}
-}
+
+// resetGameBoard() {
+
+// }
+

@@ -13,6 +13,8 @@ var box6 = document.getElementById("6");
 var box7 = document.getElementById("7");
 var box8 = document.getElementById('8');
 
+var gameHeadline = document.querySelector(".game-headline");
+
 // var iggyWins = document.querySelector(".iggy-wins")
 // iggyWins.dataset.iggy-wins = iggy.wins;
 
@@ -22,26 +24,14 @@ function updateGame(event) {
   var index = event.target.id
   var boxName = document.getElementById(index);
   console.log(index, boxName)
-  
   currentGame.trackGameData(index)
- 
   placeToken(boxName)
-  // currentGame.determineOutcome();
+  currentGame.determineOutcome();
   currentGame.goNext();
 }
 
-// }
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {
   boxNumber.innerText = currentGame.currentPlayer.token;
 }
 }
-// currentGame.trackGameData()
-
-// }
-// currentGame.currentPlayer.id
-// currentGame.trackGameData
-
-// currentGame.gameBoard
-
-// //

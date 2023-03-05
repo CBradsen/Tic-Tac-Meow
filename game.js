@@ -73,8 +73,10 @@ determineOutcome() {
 startPlayer() {
   if (this.startingPlayer === this.player1) {
     this.startingPlayer = this.player2;
+    this.currentPlayer = this.player2;
   } else {
     this.startingPlayer = this.player1;
+    this.currentPlayer = this.player1;
   }
   return this.startingPlayer
 }

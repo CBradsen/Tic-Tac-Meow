@@ -44,12 +44,10 @@ function renderOutcome() {
   setTimeout(function() {
     gameBoard.addEventListener("click", updateGame);
   }, 4000);
-  
-  //if a winner: 
-   gameHeadline.innerHTML = `${currentGame.winner} Wins!`
-   //if a draw:
-  }  
+   gameHeadline.innerHTML = `${currentGame.winner} wins this game!`
 
+  }
+    
 
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {

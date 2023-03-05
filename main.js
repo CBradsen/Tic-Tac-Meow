@@ -2,7 +2,11 @@ var iggy = new Player("0", "🐷");
 var ziggy = new Player("1", "😻");
 var currentGame = new Game(iggy, ziggy);
 
+
 var gameBoard = document.querySelector(".game-container");
+var gameBoxes = document.querySelectorAll(".game");
+var iggyWins = document.querySelector(".iggy-wins");
+var ziggyWins = document.querySelector(".ziggy-wins");
 var box0 = document.getElementById("0");
 var box1 = document.getElementById("1");
 var box2 = document.getElementById("2");
@@ -32,25 +36,32 @@ function updateGame(event) {
       currentGame.goNext();
     } else {
       renderOutcome();
+      clearGameBoard();
     }
   
 }
 
 function renderOutcome() {
-   gameHeadline.innerHTML = `${currentGame.winner} Wins!`
-   gameBoard.removeEventListener('click', updateGame);
-   var starter = currentGame.startPlayer();
-   clearGameBoard()
-   var newGame = new Game(iggy, ziggy, starter);
-}
+  gameBoard.removeEventListener("click", updateGame); 
+  setTimeout(function() {
+    gameBoard.addEventListener("click", updateGame);
+  }, 4000);
+   gameHeadline.innerHTML = `${currentGame.winner} wins this game!`
 
+  }
+    
 
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {
   boxNumber.innerText = currentGame.currentPlayer.token;
-}
+  }
 }
 
 function clearGameBoard() {
-  gameBoard.childNodes.innerText = "";
+  currentGame.resetGame();
+ for (var i = 0; i < gameBoxes.length; i++) {
+  gameBoxes[i].innerText = "";
+ }
+ return
 }
+

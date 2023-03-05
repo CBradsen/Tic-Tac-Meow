@@ -40,47 +40,42 @@ determineOutcome() {
     for (var i = 0; i < wins.length; ++i) {
       if (wins[i] === 0) {
         this.player1.increaseWins();
-        // setTimeout(5000);
+        iggyWins.setAttribute('data-iggy-wins', this.player1.wins);
         console.log("iggy wins");
         this.winner = "Iggy"
-        // this.startPlayer()
-        this.gameBoard = ["", "", "", "", "", "", "", "", ""];
         return;
 
-      // } else if (wins[i] === 3) {
-       
-      //   this.player2.increaseWins();
-      //   gameHeadline.innerHTML = "ZIggy Wins!";
-      //   setTimeout("location.reload(true);", 5000);
-      //   console.log("ziggy wins");
-      //   return;
-      // } else if (!this.gameBoard.includes("")) {
-      //   gameHeadline.innerHTML = "It's a draw!";
-      //   setTimeout("location.reload(true);", 8000);
-      //   console.log("its a draw");
-      //   return
-      // }
-      // else return
+      } else if (wins[i] === 3) {
+         this.player2.increaseWins();
+         ziggyWins.setAttribute('data-ziggy-wins', this.player2.wins);
+         console.log("ziggy wins");
+         this.winner = "Ziggy"
+         return;
+
+      } else if (this.turns === 9) {
+          this.winner = "No one"
+          console.log("Its a draw");
+        return
+      }
     }
     }
-    // determineDraw(!wins[i].includes("")) {
-    //     gameHeadline.innerHTML = "It's a draw!";
-    //     setTimeout("location.reload(true);", 5000);
-    //     console.log("its a draw");
-    //   } 
-}
-  
+   
 startPlayer() {
   if (this.startingPlayer === this.player1) {
     this.startingPlayer = this.player2;
+    this.currentPlayer = this.player2;
   } else {
     this.startingPlayer = this.player1;
+    this.currentPlayer = this.player1;
   }
   return this.startingPlayer
 }
 
-resetGameBoard() {
-	this.gameBoard = ["", "", "", "", "", "", "", "", ""];
+resetGame() {
+	this.startPlayer()
+  this.gameBoard = ["", "", "", "", "", "", "", "", ""];
+  this.turns = 0;
+  this.winner = null;
 }
-
 }
+  

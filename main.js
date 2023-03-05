@@ -20,6 +20,7 @@ var gameHeadline = document.querySelector(".game-headline");
 
 gameBoard.addEventListener("click", updateGame)
 
+
 function updateGame(event) {
   var index = event.target.id
   var boxName = document.getElementById(index);
@@ -27,11 +28,29 @@ function updateGame(event) {
   currentGame.trackGameData(index)
   placeToken(boxName)
   currentGame.determineOutcome();
-  currentGame.goNext();
+    if (!currentGame.winner) {
+      currentGame.goNext();
+    } else {
+      renderOutcome();
+    }
+  
 }
+
+function renderOutcome() {
+   gameHeadline.innerHTML = `${currentGame.winner} Wins!`
+   gameBoard.removeEventListener('click', updateGame);
+   var starter = currentGame.startPlayer();
+   clearGameBoard()
+   var newGame = new Game(iggy, ziggy, starter);
+}
+
 
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {
   boxNumber.innerText = currentGame.currentPlayer.token;
 }
+}
+
+function clearGameBoard() {
+  gameBoard.childNodes.innerText = "";
 }

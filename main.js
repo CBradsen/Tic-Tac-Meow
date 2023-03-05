@@ -5,6 +5,8 @@ var currentGame = new Game(iggy, ziggy);
 
 var gameBoard = document.querySelector(".game-container");
 var gameBoxes = document.querySelectorAll(".game");
+var iggyWins = document.querySelector(".iggy-wins");
+var ziggyWins = document.querySelector(".ziggy-wins");
 var box0 = document.getElementById("0");
 var box1 = document.getElementById("1");
 var box2 = document.getElementById("2");

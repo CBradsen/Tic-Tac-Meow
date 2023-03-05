@@ -40,12 +40,14 @@ determineOutcome() {
     for (var i = 0; i < wins.length; ++i) {
       if (wins[i] === 0) {
         this.player1.increaseWins();
+        iggyWins.setAttribute('data-iggy-wins', this.player1.wins);
         console.log("iggy wins");
         this.winner = "Iggy"
         return;
 
       } else if (wins[i] === 3) {
          this.player2.increaseWins();
+         ziggyWins.setAttribute('data-ziggy-wins', this.player2.wins);
          console.log("ziggy wins");
          this.winner = "Ziggy"
          return;

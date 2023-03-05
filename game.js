@@ -81,8 +81,10 @@ startPlayer() {
   return this.startingPlayer
 }
 
-resetGameBoard() {
-	this.gameBoard = ["", "", "", "", "", "", "", "", ""];
+resetGame() {
+	this.startPlayer()
+  this.gameBoard = ["", "", "", "", "", "", "", "", ""];
+  this.turns = 0;
+  this.winner = null;
 }
-
 }

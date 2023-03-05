@@ -35,7 +35,6 @@ function updateGame(event) {
     } else {
       renderOutcome();
       clearGameBoard();
-      startNewGame();
     }
   
 }
@@ -59,15 +58,10 @@ function placeToken(boxNumber) {
 }
 
 function clearGameBoard() {
+  currentGame.resetGame();
  for (var i = 0; i < gameBoxes.length; i++) {
   gameBoxes[i].innerText = "";
  }
  return
 }
 
-function startNewGame() {
-   var startNewGame = new Game(iggy, ziggy);
-   startNewGame = currentGame;
-   currentGame.startPlayer();
-   return
-}

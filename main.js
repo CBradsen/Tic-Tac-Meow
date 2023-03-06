@@ -37,8 +37,10 @@ function updateGame(event) {
       showTurn();
     } else {
       renderOutcome();
-      clearGameBoard();
-      // showTurn();
+      setTimeout(function() {
+        clearGameBoard()
+        showStartingPlayer();
+      }, 5000);
     }
 }
 
@@ -47,16 +49,17 @@ function renderOutcome() {
   gameHeadline.innerHTML = `${currentGame.winner} wins this game!`
 
   setTimeout(function() {
-    clearGameBoard()
-    showStartingPlayer()
     gameBoard.addEventListener("click", updateGame);
   }, 5000);
+    
+    
+
   }
    
 
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {
-  boxNumber.innerHTML = `currentGame.currentPlayer.token`;
+  boxNumber.innerHTML = currentGame.currentPlayer.token;
   }
 }
 

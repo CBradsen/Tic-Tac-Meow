@@ -34,22 +34,25 @@ function updateGame(event) {
   currentGame.determineOutcome();
     if (!currentGame.winner) {
       currentGame.goNext();
+      showTurn();
     } else {
       renderOutcome();
       clearGameBoard();
+      // showTurn();
     }
-  
 }
 
 function renderOutcome() {
   gameBoard.removeEventListener("click", updateGame); 
-  setTimeout(function() {
-    gameBoard.addEventListener("click", updateGame);
-  }, 4000);
-   gameHeadline.innerHTML = `${currentGame.winner} wins this game!`
+  gameHeadline.innerHTML = `${currentGame.winner} wins this game!`
 
+  setTimeout(function() {
+    clearGameBoard()
+    showStartingPlayer()
+    gameBoard.addEventListener("click", updateGame);
+  }, 5000);
   }
-    
+   
 
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {
@@ -59,9 +62,19 @@ function placeToken(boxNumber) {
 
 function clearGameBoard() {
   currentGame.resetGame();
- for (var i = 0; i < gameBoxes.length; i++) {
+    for (var i = 0; i < gameBoxes.length; i++) {
   gameBoxes[i].innerText = "";
  }
- return
 }
 
+function showStartingPlayer() {
+  currentGame.startPlayer();
+  gameHeadline.innerText = currentGame.startingPlayer.token + " goes first this time.";
+}
+
+function showTurn() {
+  gameHeadline.innerText = currentGame.currentPlayer.token + "'s turn.";
+}
+
+
+// Sunday pm game now is not registering wins or all plays even. though it was earlier today. was working great. This could be due to set Time out that was added, also took out some functions that were repititous for updateing game. 

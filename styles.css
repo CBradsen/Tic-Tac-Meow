@@ -112,6 +112,10 @@ h1 {
  align-items: center;;
 }
 
+/* #0, #4, #6 {
+  padding-left: 5px;
+} */
+
 .iggy-wins::after {
   content: attr(data-iggy-wins);
   grid-area: 2;

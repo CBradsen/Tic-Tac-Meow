@@ -1,5 +1,5 @@
-var iggy = new Player("0", "🐷");
-var ziggy = new Player("1", "😻");
+var iggy = new Player("Iggy", "0", "assets/iggy-token.svg");
+var ziggy = new Player("Ziggy", "1", "assets/ziggy-token.svg");
 var currentGame = new Game(iggy, ziggy);
 
 
@@ -56,7 +56,7 @@ function renderOutcome() {
 
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {
-  boxNumber.innerText = currentGame.currentPlayer.token;
+  boxNumber.innerHTML = `currentGame.currentPlayer.token`;
   }
 }
 
@@ -76,5 +76,3 @@ function showTurn() {
   gameHeadline.innerText = currentGame.currentPlayer.token + "'s turn.";
 }
 
-
-// Sunday pm game now is not registering wins or all plays even. though it was earlier today. was working great. This could be due to set Time out that was added, also took out some functions that were repititous for updateing game. 

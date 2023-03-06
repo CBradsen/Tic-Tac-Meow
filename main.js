@@ -51,9 +51,6 @@ function renderOutcome() {
   setTimeout(function() {
     gameBoard.addEventListener("click", updateGame);
   }, 5000);
-    
-    
-
   }
    
 
@@ -72,7 +69,7 @@ function clearGameBoard() {
 
 function showStartingPlayer() {
   currentGame.startPlayer();
-  gameHeadline.innerText = currentGame.startingPlayer.token + " goes first this time.";
+  gameHeadline.innerHTML= `${currentGame.startingPlayer.token} ${currentGame.startingPlayer.name} goes first this time.`;
 }
 
 function showTurn() {

@@ -1,5 +1,5 @@
 class Game {
-  constructor(iggy, ziggy, starting) {
+  constructor(iggy, ziggy) {
   this.player1 = iggy;
   this.player2 = ziggy;
   this.gameBoard = ["", "", "", "", "", "", "", "", ""];
@@ -42,14 +42,13 @@ determineOutcome() {
         this.player1.increaseWins();
         iggyWins.setAttribute('data-iggy-wins', this.player1.wins);
         console.log("iggy wins");
-        this.winner = "Iggy"
+        this.winner = this.player1.name;
         return;
-
-      } else if (wins[i] === 3) {
+        } else if (wins[i] === 3) {
          this.player2.increaseWins();
          ziggyWins.setAttribute('data-ziggy-wins', this.player2.wins);
          console.log("ziggy wins");
-         this.winner = "Ziggy"
+         this.winner = this.player2.name;
          return;
 
       } else if (this.turns === 9) {

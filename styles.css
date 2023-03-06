@@ -96,6 +96,7 @@ h1 {
   padding-bottom: 0px;
   column-gap: 10px;
   row-gap: 10px;
+  position: static;
 
 }
 /*
@@ -124,3 +125,7 @@ h1 {
 .ziggy-wins::after {
   content: attr(data-ziggy-wins);
 }
+
+/* #iggy {
+  max-height: 10px;
+} */

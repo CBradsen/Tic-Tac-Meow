@@ -2,7 +2,7 @@
 
 
 
-## ## Installation Steps
+## Installation Steps
 
 1. Fork and clone this repo to your computer’s terminal.
 2. Type `cd tictac-game` to move into the root directory.

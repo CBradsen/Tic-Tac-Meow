@@ -18,15 +18,19 @@
         <p class="iggy-wins" data-iggy-wins="0"></p>
       </aside>
       <header>
-        <h1 class="game-headline">Welcome to Tic Tac Meow! Iggy goes first.</h1>
+        <h1 class="game-headline">Welcome to Tic Tac Meow! Iggy goes first.</h1> 
       </header>
-        <img class="outcome-iggy" id="iggy-outcome" src="" alt="When Iggy wins or looses, their reaction will show here.">
-        <img class="outcome-draw" id="draw" src="" alt="When the game is a draw, the cats will be together here.">
-        <img class="outcome-ziggy" id="ziggy-outcome" src="" alt="When Ziggy wins or looses, they will show their reaction here.">
+        <div class="outcome-iggy">
+          <img class="outcome-iggy-pic hidden" id="iggy-outcome" src="assets/iggy-lost.svg" alt="When Iggy wins or looses, their reaction will show here.">
+        </div>
+        <div class="outcome-draw">
+          <img class="outcome-draw-pic hidden" id="draw" src="assets/draw.svg" alt="When the game is a draw, the cats will be together here.">
+        </div>
+        <div class="outcome-ziggy">
+          <img class="outcome-ziggy-pic hidden" id="ziggy-outcome" src="assets/ziggy-wins.svg" alt="When Ziggy wins or looses, they will show their reaction here.">
+        </div>    
       <section class ="game-container">
-        <article class="game" id="0" data-player="">
-          <!-- <img src="${token}" alt="player ${id}"/> -->
-        </article>
+        <article class="game" id="0" data-player=""></article>
         <article class="game" id="1" data-player=""></article>
         <article class="game" id="2" data-player=""></article>
         <article class="game" id="3" data-player=""></article>
@@ -42,6 +46,7 @@
         <p>Wins</p>
         <p class="ziggy-wins" data-ziggy-wins="0"></p>
       </aside>
+      <footer class="footer"></footer>
     <script src="game.js"></script>
     <script src="player.js"></script>
     <script src="main.js"></script>

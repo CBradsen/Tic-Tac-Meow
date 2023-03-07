@@ -1,8 +1,12 @@
-var iggy = new Player("Iggy", "0", "assets/iggy-token.svg");
+var iggy = new Player("Iggy", "0", "assets/iggy-token.svg", ["assets/iggyProfilepic.svg"], ["assets/iggy-lost.svg"]);
 var ziggy = new Player("Ziggy", "1", "assets/ziggy-token.svg");
 var currentGame = new Game(iggy, ziggy);
 
-
+var outcomeIggy = document.querySelector(".outcome-iggy");
+var iggyLoses = document.querySelector(".iggy-loses");
+var outcomeDraw = document.querySelector("#draw");
+var outcomeZiggy = document.querySelector("#ziggy-outcome");
+var outcomeZiggyPic = document.querySelector(".outcome-ziggy-pic")
 var gameBoard = document.querySelector(".game-container");
 var gameBoxes = document.querySelectorAll(".game");
 var iggyWins = document.querySelector(".iggy-wins");
@@ -15,12 +19,14 @@ var box4 = document.getElementById("4");
 var box5 = document.getElementById("5");
 var box6 = document.getElementById("6");
 var box7 = document.getElementById("7");
-var box8 = document.getElementById('8');
+var box8 = document.getElementById("8");
+
+var iggyWinPics = [];
+var iggyLosesPics = "assets/iggy-lost.svg";
+var draw = [];
 
 var gameHeadline = document.querySelector(".game-headline");
 
-// var iggyWins = document.querySelector(".iggy-wins")
-// iggyWins.dataset.iggy-wins = iggy.wins;
 
 gameBoard.addEventListener("click", updateGame)
 
@@ -36,6 +42,7 @@ function updateGame(event) {
       currentGame.goNext();
       showTurn();
     } else {
+      
       renderOutcome();
       setTimeout(function() {
         clearGameBoard()
@@ -45,14 +52,16 @@ function updateGame(event) {
 }
 
 function renderOutcome() {
+  
   gameBoard.removeEventListener("click", updateGame); 
-  gameHeadline.innerHTML = `${currentGame.winner} wins this game!`
+  gameHeadline.innerHTML = `${currentGame.winner} wins!`;
+  renderOutcomeImages();
 
   setTimeout(function() {
     gameBoard.addEventListener("click", updateGame);
   }, 5000);
   }
-   
+
 
 function placeToken(boxNumber) {
   if (!boxNumber.innerText) {
@@ -73,6 +82,12 @@ function showStartingPlayer() {
 }
 
 function showTurn() {
-  gameHeadline.innerText = currentGame.currentPlayer.token + "'s turn.";
+  gameHeadline.innerHTML = `${currentGame.currentPlayer.token} ${currentGame.currentPlayer.name}'s turn.`;
 }
 
+function renderOutcomeImages() {
+  if (currentGame.winner === currentGame.player2.name) {
+    outcomeZiggyPic.classList.remove("hidden");
+    return;
+  }
+}

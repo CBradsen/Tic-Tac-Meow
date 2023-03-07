@@ -67,8 +67,9 @@ p, h2 {
 .outcome-iggy {
   grid-area: iggy;
   background-color: #36827F; 
+  display: grid;
   align-items: center;
-  justify-items: center;
+  justify-items: flex-end;
 }
 
 .outcome-draw {
@@ -99,8 +100,6 @@ p, h2 {
   justify-items: center;
   border-left: solid 80px #36827F;
   border-right: solid 80px #36827F;
-
-
 }
 
 .game {

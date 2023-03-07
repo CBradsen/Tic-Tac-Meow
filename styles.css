@@ -2,7 +2,6 @@
 font-family: 'Pangolin', sans-serif;
 /* border: solid 1px red; */
 height: 100%;
-
 }
 
 html, body {
@@ -14,14 +13,15 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: .5fr 1fr 1fr 1fr 1fr .5fr; 
-
   grid-template-areas: 
     "leftside header header header rightside"
     "leftside iggy draw ziggy rightside"
     "leftside game-container game-container game-container rightside"
     "leftside game-container game-container game-container rightside"
-    "leftside game-container game-container game-container rightside";
-  height: 100%;
+    "leftside game-container game-container game-container rightside"
+    "leftside footer footer footer rightside";
+  /* max-height: 300em;
+  max-width: 600em; */
 }
 
 .left-side {
@@ -48,68 +48,67 @@ html, body {
 
 header, h1 {
 grid-area: header; 
-background-color: #739382;
+background-color: #36827F;
 } 
 
 h1 {
   display: grid;
   align-items: center;
   justify-items: center;
-  margin: 0;
+  font-size: 1.9rem;
+  margin: .2rem;
+  color:#F1F1F1
+}
+
+p, h2 {
+  font-size: 1.4rem;
 }
 
 .outcome-iggy {
   grid-area: iggy;
-  background-color: #739382;
+  background-color: #36827F; 
   display: grid;
   align-items: center;
-  justify-items: center;
+  justify-items: flex-end;
 }
 
 .outcome-draw {
   grid-area: draw;
-  background-color: #739382;
+  background-color: #36827F;
   display: grid;
   align-items: center;
   justify-items: center;
   margin: 0;
+  
 }
 
 .outcome-ziggy {
   grid-area: ziggy;
-  background-color: #739382;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 0;
+  background-color: #36827F;
 }
 
 .game-container {
   grid-area: game-container;
   display: grid;
-  grid-template-columns: 32.3% 32.3% 32.3%;
-  background-color: #739382;
-  /* display: flex;
-  flex-wrap: wrap; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-color: #f3f8f7;
+  grid-gap: 0.5rem;
+  align-content: center;
   justify-content: center; 
-  border: solid 20px #276864;
-  padding-bottom: 0px;
-  column-gap: 10px;
-  row-gap: 10px;
-
+  align-items: center;
+  justify-items: center;
+  border-left: solid 80px #36827F;
+  border-right: solid 80px #36827F;
 }
-/*
-#box1, #box4, #box {
-  grid-area: box1;
-  background-color: magenta;
-} */
 
 .game {
- background-color: #276864;
- background: #276864;
- display: flex;
- justify-content: center;
- align-items: center;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #36827F;
+  width: 100%;
+  height: 100%;
 }
 
 .iggy-wins::after {
@@ -119,4 +118,14 @@ h1 {
 
 .ziggy-wins::after {
   content: attr(data-ziggy-wins);
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #36827F;
+  height: 100%;
 }

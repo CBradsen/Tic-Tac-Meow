@@ -13,16 +13,24 @@
     <section class="container">
       <aside class="left-side">
         <h2 class="iggy-name">Iggy</h2>
-        <img id="iggy-image" src="" alt="Iggy is a black and grey hand-drawn cartoon cat who is smiling while sitting with a playful, raised tail.">
+        <img id="iggy-image" src="assets/iggyProfilePic.svg" alt="Iggy is a black and grey hand-drawn cartoon cat who is smiling while sitting with a playful, raised tail.">
         <p>Wins</p>
         <p class="iggy-wins" data-iggy-wins="0"></p>
       </aside>
       <header>
-        <h1 class="game-headline">Welcome to Tic Tac Meow! Iggy goes first.</h1>
+        <h1 class="game-headline">Welcome to Tic Tac Meow! Iggy goes first.</h1> 
       </header>
-        <img class="outcome-iggy" id="iggy-outcome" src="" alt="When Iggy wins or looses, their reaction will show here.">
-        <img class="outcome-draw" id="draw" src="" alt="When the game is a draw, the cats will be together here.">
-        <img class="outcome-ziggy" id="ziggy-outcome" src="" alt="When Ziggy wins or looses, they will show their reaction here.">
+        <div class="outcome-iggy">
+          <img class="outcome-iggy-won-pic hidden" id="iggy-outcome-won" src="assets/iggy-wins-dancing.gif" alt="Iggy turns around and around to celebrate the win!">
+          <img class="outcome-iggy-lost-pic hidden" id="iggy-outcome-lost" src="assets/iggy-lost.svg" alt="Iggy didn't win this time. To show they don't care Iggy licks their leg and turns the other way from Ziggy">
+        </div>
+        <div class="outcome-draw">
+          <img class="outcome-draw-pic hidden" id="draw" src="assets/draw.svg" alt="The cats sit content looking at one another with a toy mouse between them.">
+        </div>
+        <div class="outcome-ziggy">
+          <img class="outcome-ziggy-won-pic hidden" id="ziggy-outcome-won" src="assets/ziggy-wins.svg" alt="Ziggy won and jumps joyfully in the air to celebrate.">
+          <img class="outcome-ziggy-lost-pic hidden" id="ziggy-outcome-lost" src="assets/ziggy-lost-rollseyes.gif" alt="Ziggy lost and rolls their eyes at Iggy who is twirling in celebration.">
+        </div>    
       <section class ="game-container">
         <article class="game" id="0" data-player=""></article>
         <article class="game" id="1" data-player=""></article>
@@ -36,10 +44,11 @@
       </section>
       <aside class="right-side">
         <h2 class="ziggy-name">Ziggy</h2>
-        <img id="ziggy-image" src="" alt="Ziggy is a white hand-drawn cartoon cat with orange and light yellow spots. They are smiling while sitting with a playful, curled tail.">
+        <img id="ziggy-image" src="assets/ziggyProfilePic.svg" alt="Ziggy is a white hand-drawn cartoon cat with orange and light yellow spots. They are smiling while sitting with a playful, curled tail.">
         <p>Wins</p>
         <p class="ziggy-wins" data-ziggy-wins="0"></p>
       </aside>
+      <footer class="footer"></footer>
     <script src="game.js"></script>
     <script src="player.js"></script>
     <script src="main.js"></script>

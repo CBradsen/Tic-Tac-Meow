@@ -10,7 +10,7 @@
 4. To open in a code editor such as VS Code, type code .
 
 ## Object
-My objective was to write DRY code and create a functional and fun game.
+My objective was to write DRY code and create a functional and fun game. [Project spec here.](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo-v2.html)
 
 ![image](https://user-images.githubusercontent.com/117617970/223593742-e1394983-891c-4d03-a6fb-f44aabf76409.png)
 

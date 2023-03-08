@@ -1,6 +1,5 @@
 * {
 font-family: 'Pangolin', sans-serif;
-/* border: solid 1px red; */
 height: 100%;
 }
 
@@ -20,8 +19,6 @@ html, body {
     "leftside game-container game-container game-container rightside"
     "leftside game-container game-container game-container rightside"
     "leftside footer footer footer rightside";
-  /* max-height: 300em;
-  max-width: 600em; */
 }
 
 .left-side {
@@ -34,7 +31,6 @@ html, body {
   padding: 1.25rem;
 }
 
-
 .right-side {
   display: grid;
   grid-area: rightside;
@@ -44,7 +40,6 @@ html, body {
   justify-items: center;
   padding: 1.25rem;
 }
-
 
 header, h1 {
 grid-area: header; 
@@ -67,7 +62,7 @@ p, h2 {
 .outcome-iggy {
   grid-area: iggy;
   background-color: #36827F; 
-  display: grid;
+  display: grid; 
   align-items: center;
   justify-items: flex-end;
 }

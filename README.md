@@ -12,7 +12,7 @@
 ## Object
 My objective was to write DRY code and create a functional and fun game.
 
-![image](https://user-images.githubusercontent.com/117617970/223592289-a951d59d-c414-4932-a311-fea3c34dd4ca.png)
+![image](https://user-images.githubusercontent.com/117617970/223593742-e1394983-891c-4d03-a6fb-f44aabf76409.png)
 
 ## Maker
 Carol Bradsen worked on this project over a week during the Mod 1 Frontend Development bootcamp of Turing School of Software and Design.

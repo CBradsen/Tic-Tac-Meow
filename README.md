@@ -12,7 +12,7 @@
 ## Object
 My objective was to write DRY code and create a functional and fun game. [Project spec here.](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo-v2.html)
 
-![image](https://user-images.githubusercontent.com/117617970/223599780-e2418b75-025f-4f29-9787-f792aefc484d.png)
+![image](https://user-images.githubusercontent.com/117617970/223599924-ee45122e-e56e-4e19-bcb8-70af669557bd.png)
 
 ## Maker
 Carol Bradsen worked on this project over a week during the Mod 1 Frontend Development bootcamp of Turing School of Software and Design.

@@ -23,3 +23,4 @@ Carol Bradsen worked on this project over a week during the Mod 1 Frontend Devel
 - Clear logic
 - Engaging cats, colors
 - Challenge: after many attempts, I could not get the determineWinner() to accurately detect a win on the final play.
+- This was due to a draw conditional being inside of a for loop to check for wins, once moved to not be part of the for loop, all win conditions were checked and then the draw was called if needed. 

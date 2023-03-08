@@ -91,5 +91,3 @@ function clearOutcomeImages() {
     outcomeDrawPic.classList.add("hidden");
   }
 }
-
-

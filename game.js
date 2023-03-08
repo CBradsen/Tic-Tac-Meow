@@ -47,7 +47,7 @@ determineOutcome() {
          ziggyWins.setAttribute('data-ziggy-wins', this.player2.wins);
          this.winner = this.player2.name;
          return;
-      } else if (!wins[i] === 0 && !wins[i] === 3 && this.turns === 9) {
+      } else if (wins[i] !== 0 && wins[i] !== 3 && this.turns >= 9) {
           this.winner = "No one";
         return;
       }

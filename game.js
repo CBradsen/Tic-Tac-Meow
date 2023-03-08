@@ -10,7 +10,6 @@ class Game {
 }
 
 trackGameData(i) {
-  console.log(i)
   if (!this.gameBoard[i]) {
     this.gameBoard[i] = this.currentPlayer.id;
     this.turns += 1;  
@@ -41,18 +40,15 @@ determineOutcome() {
       if (wins[i] === 0) {
         this.player1.increaseWins();
         iggyWins.setAttribute('data-iggy-wins', this.player1.wins);
-        console.log("iggy wins");
         this.winner = this.player1.name;
         return;
       } else if (wins[i] === 3) {
          this.player2.increaseWins();
          ziggyWins.setAttribute('data-ziggy-wins', this.player2.wins);
-         console.log("ziggy wins");
          this.winner = this.player2.name;
          return;
       } else if (!wins[i] === 0 && !wins[i] === 3 && this.turns === 9) {
           this.winner = "No one";
-          console.log("Its a draw");
         return;
       }
     }
@@ -75,4 +71,3 @@ resetGame() {
   this.winner = null;
 }
 }
-  

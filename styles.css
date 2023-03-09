@@ -6,6 +6,7 @@ height: 100%;
 html, body {
   height: 100%;
   margin: 0px;
+  max-width: 1600px;
 }
 
 .container {
@@ -19,6 +20,8 @@ html, body {
     "leftside game-container game-container game-container rightside"
     "leftside game-container game-container game-container rightside"
     "leftside footer footer footer rightside";
+    justify-content: center;
+    align-content: center;
 }
 
 .left-side {
@@ -93,8 +96,11 @@ p, h2 {
   justify-content: center; 
   align-items: center;
   justify-items: center;
-  border-left: solid 80px #36827F;
-  border-right: solid 80px #36827F;
+  border-left: solid 90px #36827F;
+  border-right: solid 90px #36827F;
+  min-width: 500px;
+  min-height: 500px;
+  
 }
 
 .game {

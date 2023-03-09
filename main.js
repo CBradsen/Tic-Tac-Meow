@@ -16,15 +16,25 @@ var gameBoxes = document.querySelectorAll(".game");
 var iggyWins = document.querySelector(".iggy-wins");
 var ziggyWins = document.querySelector(".ziggy-wins");
 
-gameBoard.addEventListener("click", updateGame)
+gameBoard.addEventListener("click", updateGame);
 
 function updateGame(event) {
   var index = event.target.id
   var boxName = document.getElementById(index);
-  currentGame.trackGameData(index)
-  placeToken(boxName)
-  currentGame.determineOutcome();
-    if (!currentGame.winner) {
+
+  if (currentGame.gameBoard[index] !== "") {
+    return;
+  } else {
+    currentGame.trackGameData(index) 
+    placeToken(boxName, index)
+    currentGame.determineWinner();
+    currentGame.determineDraw();
+    showWhatsNext();
+  }
+}
+
+function showWhatsNext() {
+  if (currentGame.winner === null) {
       currentGame.goNext();
       showTurn();
     } else {
@@ -34,7 +44,9 @@ function updateGame(event) {
         showStartingPlayer();
       }, 5000);
     }
-}
+  }
+
+
 
 function renderOutcome() {
   gameBoard.removeEventListener("click", updateGame); 
@@ -43,13 +55,11 @@ function renderOutcome() {
   setTimeout(function() {
     gameBoard.addEventListener("click", updateGame);
   }, 5000);
-  }
+}
 
 function placeToken(boxNumber) {
-  if (!boxNumber.innerText) {
-  boxNumber.innerHTML = currentGame.currentPlayer.token;
-  }
-}
+  boxNumber.innerHTML = currentGame.currentPlayer.token; 
+} 
 
 function clearGameBoard() {
   clearOutcomeImages();

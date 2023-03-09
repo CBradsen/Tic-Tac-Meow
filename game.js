@@ -12,19 +12,19 @@ class Game {
 trackGameData(i) {
   if (!this.gameBoard[i]) {
     this.gameBoard[i] = this.currentPlayer.id;
-    this.turns += 1;  
+    this.turns += 1; 
   }
 } 
 
 goNext() {
   if (this.currentPlayer === this.player1) {
     this.currentPlayer = this.player2;
-  } else {
+    } else {
     this.currentPlayer = this.player1;
   }
 }
  
-determineOutcome() {
+determineWinner() {
   var g = this.gameBoard;
   var win1 = parseInt(g[0]) + parseInt(g[1]) + parseInt(g[2]);
   var win2 = parseInt(g[3]) + parseInt(g[4]) + parseInt(g[5]);
@@ -47,13 +47,18 @@ determineOutcome() {
          ziggyWins.setAttribute('data-ziggy-wins', this.player2.wins);
          this.winner = this.player2.name;
          return;
-      } 
       }
-     if (this.winner = null && this.turns >= 9) {
-        this.winner = "No one";
-        return;
     }
  }
+
+determineDraw() {
+   if (this.winner === null && this.turns === 9) {
+      console.log(this.winner);
+          this.winner = "No one";
+          console.log(this.winner)
+        return;
+    }
+}
    
 startPlayer() {
   if (this.startingPlayer === this.player1) {

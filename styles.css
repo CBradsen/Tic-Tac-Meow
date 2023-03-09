@@ -6,6 +6,7 @@ height: 100%;
 html, body {
   height: 100%;
   margin: 0px;
+  max-width: 1600px;
 }
 
 .container {
@@ -93,8 +94,11 @@ p, h2 {
   justify-content: center; 
   align-items: center;
   justify-items: center;
-  border-left: solid 80px #36827F;
-  border-right: solid 80px #36827F;
+  border-left: solid 90px #36827F;
+  border-right: solid 90px #36827F;
+  max-width: 600px;
+  max-height: 600px;
+  
 }
 
 .game {
